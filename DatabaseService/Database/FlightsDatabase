@@ -1,0 +1,62 @@
+{
+    "flightDestination": "Lisbon",
+    "departure": "2020-01-01",
+    "arrival": "2020-01-05",
+    "price": 250,
+    "airline": "Air Serbia",
+    "numberOfSeats": "100",
+    "typeOfAirplane": "Jet"
+}
+
+{
+    "flightDestination": "Paris",
+    "departure": "2020-01-08",
+    "arrival": "2020-01-015",
+    "price": 300,
+    "airline": "Air France",
+    "numberOfSeats": "300",
+    "typeOfAirplane": "Boeing"
+}
+
+{
+    "flightDestination": "London",
+    "departure": "2020-01-21",
+    "arrival": "2020-01-27",
+    "price": 350,
+    "airline": "British Airways",
+    "numberOfSeats": "300",
+    "typeOfAirplane": "Boeing"
+}
+
+
+{
+    "flightDestination": "Oslo",
+    "departure": "2020-02-01",
+    "arrival": "2020-02-08",
+    "price": 400,
+    "airline": "Lufthansa",
+    "numberOfSeats": "250",
+    "typeOfAirplane": "Jet"
+}
+
+
+{
+    "flightDestination": "Madrid",
+    "departure": "2020-02-02",
+    "arrival": "2020-02-12",
+    "price": 200,
+    "airline": "Air Serbia",
+    "numberOfSeats": "100",
+    "typeOfAirplane": "Jet"
+}
+
+
+{
+    "flightDestination": "Hamburg",
+    "departure": "2020-02-09",
+    "arrival": "2020-02-18",
+    "price": 250,
+    "airline": "Lufthansa",
+    "numberOfSeats": "250",
+    "typeOfAirplane": "Jet"
+}

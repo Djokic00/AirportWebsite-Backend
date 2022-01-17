@@ -1,0 +1,36 @@
+"productName": "clothes",
+"departure": "2022-01-04"
+"price": "100"
+"weight": "15"
+"size": "Small"
+"hazardous":
+"deliveryDestination":
+
+"productName": "machine",
+"departure": "2022-01-05"
+"price": "400"
+"weight": "30"
+"size": "Big"
+
+
+"productName": "Horses",
+"departure": "2022-01-10"
+"price": "1000"
+"weight": "1300"
+"size": "Big"
+
+
+
+"productName": "Car",
+"departure": "2022-01-04"
+"price": "100"
+"weight": "5"
+"size": "Big"
+
+
+
+"productName": "Goods",
+"departure": "2022-01-22"
+"price": "150"
+"weight": "25"
+"size": "Normal"

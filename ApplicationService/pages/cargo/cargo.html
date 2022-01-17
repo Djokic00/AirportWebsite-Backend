@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cargos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../common.css">
+</head>
+<body>
+<div class="customCard">
+    <div class="row">
+        <div id="books" class="col-sm-4 box">
+        </div>
+        <div id = "addform">
+            <div class = "textfields">
+                <label for="productName">ProductName</label>
+                <input type="text" id="productName">
+
+                <div>
+                    <label for="departure">Departure</label>
+                    <input type="text" id="departure">
+                </div>
+
+                <div>
+                    <label for="price">Price</label>
+                    <input type="text" id="price">
+                </div>
+
+                <div>
+                    <label for="weight">Weight</label>
+                    <input type="text" id="weight">
+                </div>
+
+                <div>
+                    <label for="size">Size</label>
+                    <input type="text" id="size">
+                </div>
+
+                <div>
+                    <label for="hazardous">Hazardous</label>
+                    <input type="text" id="hazardous">
+                </div>
+
+                <div>
+                    <label for="deliveryDestination">Delivery Destination</label>
+                    <input type="text" id="deliveryDestination">
+                </div>
+                <!--        <div>-->
+                <!--          <label for="imageURL">Book cover image url</label>-->
+                <!--          <input type="text" id="imageURL1">-->
+                <!--        </div>-->
+                <div><label></label></div>
+                <button type = "submit" onclick = "addEntry()" >Add</button>
+            </div>
+        </div>
+    </div>
+    <script src="cargo.js"></script>
+
+</body>
+</html>
