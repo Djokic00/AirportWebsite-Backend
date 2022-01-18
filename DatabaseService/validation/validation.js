@@ -27,8 +27,8 @@ const cargoSchema = Joi.object({
     productName: Joi.string().required(),
     departure: Joi.date().required(),
     price: Joi.number().integer().required(),
-    weight: Joi.string().required(),
-    size: Joi.number().required(),
+    // weight: Joi.string().required(),
+    // size: Joi.number().required(),
     hazardous: Joi.boolean(),
     deliveryDestination: Joi.string()
 });
@@ -47,10 +47,11 @@ export const validateCargoInput = (request, response) => {
 
 const rentACarSchema = Joi.object({
     carName: Joi.string().required(),
-    pickUpTime: Joi.date().required(),
-    dropOffTime: Joi.date().required(),
-    price: Joi.number().integer().required(),
-    numberOfSeats: Joi.number()
+    pricePerDay: Joi.number().integer().required(),
+    yearOfProduction: Joi.date().required(),
+    fuelConsumption: Joi.number().integer().required(),
+    numberOfSeats: Joi.number().integer().required(),
+    numberOfCars: Joi.number().integer().required()
 });
 
 
@@ -66,11 +67,11 @@ export const validateRentACarInput = (request, response) => {
 }
 
 const insuranceSchema = Joi.object({
-    title: Joi.string().required(),
-    startTime: Joi.date().required(),
-    endTime: Joi.date().required(),
-    price: Joi.number().integer().required(),
-    typeOfInsurance: Joi.string().required()
+    nameOfCompany: Joi.string().required(),
+    destinationCountry: Joi.string().required(),
+    typeOfInsurance: Joi.string().required(),
+    premium: Joi.number().integer().required(),
+    levelOfCover: Joi.number().integer().required(),
 });
 
 

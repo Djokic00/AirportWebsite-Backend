@@ -2,14 +2,13 @@ import mongoose from "mongoose";
 
 const rentACar = mongoose.Schema({
     carName: { type: String, required: true },
-    pickUpTime: { type: Date, required: true },
-    dropOffTime: { type: Date, required: true },
-    price: { type: Number, required: true },
+    pricePerDay: { type: Number, required: true },
+    yearOfProduction: { type: Date, required: true },
+    fuelConsumption: { type: Number, required: true },
     numberOfSeats: { type: Number, default: 4 },
+    numberOfCars: {type: Number, required: true}
     //imageURL: { type: String, required: true },
 });
-
-// naziv, cena po danu, broj sedista, mozda godiste, potrosnja
 
 const RentACar = mongoose.model("Rent a car", rentACar);
 

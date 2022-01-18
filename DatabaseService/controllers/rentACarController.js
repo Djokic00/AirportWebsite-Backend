@@ -4,7 +4,7 @@ import {validateRentACarInput} from "../validation/validation.js";
 import {validateFlightUpdate, validateRentACarUpdate} from "../validation/validationUpdate.js";
 
 export const addCar = async (request, response) => {
-    const {carName, pickUpTime, dropOffTime, price, numberOfSeats} = request.body;
+    const {carName, pricePerDay, yearOfProduction, fuelConsumption, numberOfSeats, numberOfCars} = request.body;
 
     const validInput = validateRentACarInput(request, response);
 
@@ -14,10 +14,11 @@ export const addCar = async (request, response) => {
 
     const car = new RentACar({
         carName: carName,
-        pickUpTime: pickUpTime,
-        dropOffTime: dropOffTime,
-        price: price,
-        numberOfSeats: numberOfSeats
+        pricePerDay: pricePerDay,
+        yearOfProduction: yearOfProduction,
+        fuelConsumption: fuelConsumption,
+        numberOfSeats: numberOfSeats,
+        numberOfCars: numberOfCars
     });
     try {
         const newCar = await car.save();

@@ -3,7 +3,7 @@ import {validateInsuranceInput} from "../validation/validation.js";
 import {validateFlightUpdate, validateInsuranceUpdate} from "../validation/validationUpdate.js";
 
 export const addInsurance = async (request, response) => {
-    const {title, destinationCountry, startTime, endTime, price, typeOfInsurance} = request.body;
+    const {nameOfCompany, destinationCountry, typeOfInsurance, premium, levelOfCover} = request.body;
 
     const validInput = validateInsuranceInput(request, response);
 
@@ -12,12 +12,11 @@ export const addInsurance = async (request, response) => {
     }
 
     const insurance = new Insurance({
-        title: title,
+        nameOfCompany: nameOfCompany,
         destinationCountry: destinationCountry,
-        startTime: startTime,
-        endTime: endTime,
-        price: price,
-        typeOfInsurance: typeOfInsurance
+        typeOfInsurance: typeOfInsurance,
+        premium: premium,
+        levelOfCover: levelOfCover
     });
     try {
         const validInput = validateInsuranceUpdate(request, response);

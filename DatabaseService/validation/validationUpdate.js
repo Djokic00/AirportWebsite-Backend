@@ -47,12 +47,12 @@ export const validateCargoUpdate = (request, response) => {
 
 
 const rentACarSchema = Joi.object({
-    carId: Joi.string(),
-    carName: Joi.string(),
-    pickUpTime: Joi.date(),
-    dropOffTime: Joi.date(),
-    price: Joi.number().integer(),
-    numberOfSeats: Joi.number()
+    carName: Joi.string().required(),
+    pricePerDay: Joi.number().integer().required(),
+    yearOfProduction: Joi.date().required(),
+    fuelConsumption: Joi.number().integer().required(),
+    numberOfSeats: Joi.number().integer().required(),
+    numberOfCars: Joi.number().integer().required()
 });
 
 

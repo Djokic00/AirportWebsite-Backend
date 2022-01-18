@@ -1,6 +1,6 @@
 .login-dark {
     height:1000px;
-    background-image: url(pictures/sky.jpg);
+    background-image: url(../../../pictures/sky.jpg);
     background-size:cover;
     position:relative;
     padding: 20em;

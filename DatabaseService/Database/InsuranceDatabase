@@ -1,0 +1,5 @@
+ nameOfCompany: { type: String, required: true },
+    destinationCountry: {type: String, required: true},
+    typeOfInsurance: { type: String, required: true},
+    premium: { type: Number, required: true },
+    levelOfCover: {type: Number, required: true}

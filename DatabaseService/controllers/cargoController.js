@@ -3,7 +3,7 @@ import {validateCargoInput} from "../validation/validation.js";
 import {validateCargoUpdate, validateFlightUpdate} from "../validation/validationUpdate.js";
 
 export const addCargo = async (request, response) => {
-    const {productName, departure, price, weight, size, hazardous, deliveryDestination} = request.body;
+    const {productName, departure, price, hazardous, deliveryDestination} = request.body;
 
     const validInput = validateCargoInput(request, response);
     if (validInput === false) {
@@ -13,9 +13,9 @@ export const addCargo = async (request, response) => {
     const cargo = new Cargo({
         productName: productName,
         departure: departure,
-        price: price,
-        weight: weight,
-        size: size,
+        pricePerKg: price,
+        // weight: weight,
+        // size: size,
         hazardous: hazardous,
         deliveryDestination: deliveryDestination
     });

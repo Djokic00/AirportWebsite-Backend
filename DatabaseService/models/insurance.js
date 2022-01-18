@@ -1,12 +1,11 @@
 import mongoose from "mongoose";
 
 const insurance = mongoose.Schema({
-    title: { type: String, required: true },
+    nameOfCompany: { type: String, required: true },
     destinationCountry: {type: String, required: true},
-    startTime: { type: Date, required: true },
-    endTime: { type: Date, required: true },
-    price: { type: Number, required: true },
-    typeOfInsurance: { type: String, required: true}
+    typeOfInsurance: { type: String, required: true},
+    premium: { type: Number, required: true },
+    levelOfCover: {type: Number, required: true}
 });
 
 // jos 1 stvar za osiguranje, naziv osiguranja, cena po danu, tip osiguranja, destinacija

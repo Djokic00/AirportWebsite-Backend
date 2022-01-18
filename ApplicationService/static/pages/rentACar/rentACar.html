@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rent A Car</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../common.css">
+</head>
+<body>
+<hr>
+<div class="row">
+    <div class="col">
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-success" id="addFlight">Add</button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-primary" id="updateFlight">Update</button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-info" id="getFlight">Find</button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-danger" id="deleteFlight">Remove</button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center">
+            <button type="button" id="logout" class="btn btn-secondary">Log Out</button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="customCard">
+    <div class="row">
+        <div id="rentACar" class="col-sm-4 box">
+        </div>
+        <div id = "addForm">
+            <div class = "textfields">
+                <label for="carName">Car name</label>
+                <input type="text" id="carName">
+                <div>
+                    <label for="pricePerDay">Price per day</label>
+                    <input type="text" id="pricePerDay">
+                </div>
+
+                <div>
+                    <label for="yearOfProduction">Year of production</label>
+                    <input type="text" id="yearOfProduction">
+                </div>
+
+                <div>
+                    <label for="fuelConsumption">Fuel consumption</label>
+                    <input type="text" id="fuelConsumption">
+                </div>
+
+                <div>
+                    <label for="numberOfSeats">Number of seats</label>
+                    <input type="text" id="numberOfSeats">
+                </div>
+
+                <div>
+                    <label for="numberOfCars">Number of cars</label>
+                    <input type="text" id="numberOfCars">
+                </div>
+                <!--        <div>-->
+                <!--          <label for="imageURL">Book cover image url</label>-->
+                <!--          <input type="text" id="imageURL1">-->
+                <!--        </div>-->
+                <div><label></label></div>
+                <!--        <button type = "submit" onclick = "addFlight()">Add Flight</button>-->
+            </div>
+        </div>
+    </div>
+    <script src="cargo.js"></script>
+</div>
+</body>
+</html>

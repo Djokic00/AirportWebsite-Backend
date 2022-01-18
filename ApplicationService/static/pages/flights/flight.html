@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flights</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../../common.css">
+</head>
+<body onload="init()">
+<hr>
+<div class="row">
+  <div class="col">
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-success" id="addFlight">Add</button>
+    </div>
+  </div>
+  <div class="col">
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-primary" id="updateFlight">Update</button>
+    </div>
+  </div>
+  <div class="col">
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-info" id="getFlight">Find</button>
+    </div>
+  </div>
+  <div class="col">
+    <div class="text-center">
+      <button type="submit" class="btn btn-outline-danger" id="deleteFlight">Delete</button>
+    </div>
+  </div>
+  <div class="col">
+    <div class="text-center">
+      <button type="button" id="logout" class="btn btn-secondary">Log Out</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="customCard">
+  <div class="row">
+    <div id="flight" class="col-sm-4 box">
+    </div>
+    <div id = "addForm">
+      <div class = "textfields">
+        <div>
+          <label for="flightId">ID</label>
+          <input type="text" id="flightId">
+        </div>
+
+        <label for="flightDestination">FlightDestination</label>
+        <input type="text" id="flightDestination">
+
+        <div>
+          <label for="departure">Departure</label>
+          <input type="text" id="departure">
+        </div>
+
+        <div>
+          <label for="arrival">Arrival</label>
+          <input type="text" id="arrival">
+        </div>
+
+        <div>
+          <label for="price">Price</label>
+          <input type="text" id="price">
+        </div>
+
+        <div>
+          <label for="airline">Airline</label>
+            <input type="text" id="airline">
+        </div>
+
+        <div>
+          <label for="numberOfSeats">Number of seats</label>
+          <input type="text" id="numberOfSeats">
+        </div>
+
+        <div>
+          <label for="typeOfAirplane">Type of airplane</label>
+          <input type="text" id="typeOfAirplane">
+        </div>
+<!--        <div>-->
+<!--          <label for="imageURL">Book cover image url</label>-->
+<!--          <input type="text" id="imageURL1">-->
+<!--        </div>-->
+        <div><label></label></div>
+<!--        <button type = "submit" onclick = "addFlight()">Add Flight</button>-->
+      </div>
+    </div>
+  </div>
+  <script src="flight.js"></script>
+</div>
+</body>
+</html>
+
+<!--<body onload="init()">-->
+
+
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--&lt;!&ndash;    <div class="col-6">&ndash;&gt;-->
+<!--&lt;!&ndash;      <h2>Ice skates:</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;      <ul id="iceLst"></ul>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    <div class="col">-->
+
+<!--      <div class="mb-3">-->
+<!--        <label for="id" class="form-label">Id</label>-->
+<!--        <input type="text" class="form-control" id="id" name="id">-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="model" class="form-label">Model</label>-->
+<!--        <input type="text" class="form-control" id="model" name="model">-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="size" class="form-label">Size</label>-->
+<!--        <input type="text" class="form-control" id="size" name="size">-->
+<!--      </div>-->
+
+
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

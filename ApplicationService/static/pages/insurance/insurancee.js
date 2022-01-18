@@ -1,6 +1,6 @@
 let flightInformation = JSON.parse(localStorage.getItem("flight"));
 
-import {validateUpdateInput} from "../../validation/validation";
+import {validateUpdateInput} from "../../../validation/validation";
 
 const updateFlight = (flightId) => {
     const flightDestination = document.getElementById(`flightDestination${flightId}`).value;
