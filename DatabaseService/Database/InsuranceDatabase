@@ -1,5 +1,41 @@
- nameOfCompany: { type: String, required: true },
-    destinationCountry: {type: String, required: true},
-    typeOfInsurance: { type: String, required: true},
-    premium: { type: Number, required: true },
-    levelOfCover: {type: Number, required: true}
+"nameOfCompany": "Delta"
+"destinationCountry": "Portugal"
+"typeOfInsurance": "Travel"
+"premium": 10
+"levelOfCover": 20000
+
+"nameOfCompany": "Delta",
+"destinationCountry": "France",
+"typeOfInsurance": "Life",
+"premium": 15,
+"levelOfCover": 25000
+
+"nameOfCompany": "Grawe",
+"destinationCountry": "England",
+"typeOfInsurance": "Travel",
+"premium": 25,
+"levelOfCover": 25000
+
+"nameOfCompany": "Delta",
+"destinationCountry": "Norway",
+"typeOfInsurance": "Travel",
+"premium": 20,
+"levelOfCover": 23000
+
+"nameOfCompany": "Grawe",
+"destinationCountry": "Spain",
+"typeOfInsurance": "Life",
+"premium": 12,
+"levelOfCover": 27000
+
+"nameOfCompany": "Grawe",
+"destinationCountry": "Germany",
+"typeOfInsurance": "Travel",
+"premium": 18,
+"levelOfCover": 30000
+
+"nameOfCompany": "Delta",
+"destinationCountry": "Switzerland",
+"typeOfInsurance": "Travel",
+"premium": 30,
+"levelOfCover": 32000

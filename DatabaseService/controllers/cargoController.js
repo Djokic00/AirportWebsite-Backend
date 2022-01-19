@@ -3,7 +3,7 @@ import {validateCargoInput} from "../validation/validation.js";
 import {validateCargoUpdate, validateFlightUpdate} from "../validation/validationUpdate.js";
 
 export const addCargo = async (request, response) => {
-    const {productName, departure, price, hazardous, deliveryDestination} = request.body;
+    const {productName, departure, pricePerKg, hazardous, deliveryDestination} = request.body;
 
     const validInput = validateCargoInput(request, response);
     if (validInput === false) {
@@ -13,7 +13,7 @@ export const addCargo = async (request, response) => {
     const cargo = new Cargo({
         productName: productName,
         departure: departure,
-        pricePerKg: price,
+        pricePerKg: pricePerKg,
         // weight: weight,
         // size: size,
         hazardous: hazardous,
@@ -21,7 +21,7 @@ export const addCargo = async (request, response) => {
     });
     try {
         const newCargo = await cargo.save();
-        response.send(200).json({message: `Successfully added: ${newCargo.productName}`})
+        response.status(200).json({message: `Successfully added: ${newCargo.productName}`})
     } catch(error) {
         response.status(400).json({message: error.message});
     }
@@ -68,7 +68,7 @@ export const updateCargo = async(request, response) => {
             return;
         }
         const newCargo = await Cargo.findByIdAndUpdate(cargo._id, updateContent);
-        response.status(200).json(`Successfully edited flight to ${newCargo.productName}`);
+        response.status(200).json(`Successfully edited cargo ${newCargo.productName}`);
     } catch (error) {
         response.status(400).json({ message: error.message });
     }
@@ -85,6 +85,6 @@ export const deleteCargo = async(request, response) => {
         response.status(200).json({ message: `Successfully deleted cargo: ${cargoId.productName}`});
 
     } catch (error) {
-        response.send(400).json({message: error.details})
+        response.status(400).json({message: error.details})
     }
 }

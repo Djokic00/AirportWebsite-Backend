@@ -13,7 +13,7 @@ app.use(cors()); // nzm cemu sluzi
 
 app.use(express.json({ limit: "30mb", extended: true }));
 
-app.use("/", userRoutes);
+app.use("/admin", userRoutes);
 
 const PORT = process.env.PORT || 8080; // na kom portu slusamo
 // konektovanje na bazu - ima na internetu kako se radi i ovo DATABASE_CONNECTION je link ka nasoj mongo bazi

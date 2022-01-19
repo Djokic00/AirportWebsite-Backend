@@ -19,12 +19,8 @@ export const addInsurance = async (request, response) => {
         levelOfCover: levelOfCover
     });
     try {
-        const validInput = validateInsuranceUpdate(request, response);
-        if (validInput === false) {
-            return;
-        }
         const newInsurance = await insurance.save();
-        response.send(200).json({message: `Successfully added: ${newInsurance.title}`})
+        response.status(200).json({message: `Successfully added: ${newInsurance.nameOfCompany}`})
     } catch(error) {
         response.status(400).json({message: error.message});
     }

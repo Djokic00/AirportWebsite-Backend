@@ -1,6 +1,41 @@
- carName: { type: String, required: true },
-    pricePerDay: { type: Number, required: true },
-    yearOfProduction: { type: Date, required: true },
-    fuelConsumption: { type: Number, required: true },
-    numberOfSeats: { type: Number, default: 4 },
-    numberOfCars: {type: Number, required: true}
+"carName": "Audi"
+"pricePerDay": 24
+"yearOfProduction": "2018"
+"fuelConsumption": 6
+"numberOfSeats": 4
+"numberOfCars": 7
+
+"carName": "Opel"
+"pricePerDay": 20,
+"yearOfProduction": "2020",
+"fuelConsumption": 5,
+"numberOfSeats": 5,
+"numberOfCars": 8
+
+"carName": "Skoda",
+"pricePerDay": 18,
+"yearOfProduction": "2019",
+"fuelConsumption": 5,
+"numberOfSeats": 5,
+"numberOfCars": 10
+
+"carName": "Mercedes Benz",
+"pricePerDay": 30,
+"yearOfProduction": "2017",
+"fuelConsumption": 7,
+"numberOfSeats": 4,
+"numberOfCars": 3
+
+"carName": "Porsche",
+"pricePerDay": 50,
+"yearOfProduction": "2018",
+"fuelConsumption": 9,
+"numberOfSeats": 6,
+"numberOfCars": 1
+
+"carName": "BMW",
+"pricePerDay": 27,
+"yearOfProduction": "2019",
+"fuelConsumption": 6,
+"numberOfSeats": 5,
+"numberOfCars": 5

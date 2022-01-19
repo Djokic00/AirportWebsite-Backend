@@ -1,26 +1,35 @@
 "productName": "clothes",
-"departure": "2022-01-04"
-"price": "100"
-"hazardous":
-"deliveryDestination":
+"departure": "2022-01-04",
+"pricePerKg": 3,
+"hazardous": "false",
+"deliveryDestination": "home address"
 
 "productName": "machine",
-"departure": "2022-01-05"
-"price": "400"
-
+"departure": "2022-01-05",
+"pricePerKg": 1,25
+"hazardous": false,
+"deliveryDestination": "airport"
 
 "productName": "Horses",
-"departure": "2022-01-10"
-"price": "1000"
+"departure": "2022-01-10",
+"pricePerKg": 6,
+"hazardous": false,
+"deliveryDestination": "airport"
 
-
-
-"productName": "Car",
-"departure": "2022-01-04"
-"price": "100"
-
-
+"productName": "Chemicals",
+"departure": "2022-01-04",
+"pricePerKg": 8,
+"hazardous": true,
+"deliveryDestination": "airport"
 
 "productName": "Goods",
-"departure": "2022-01-22"
-"price": "150"
+"departure": "2022-01-22",
+"pricePerKg": 0,75,
+"hazardous": "false",
+"deliveryDestination": "home address"
+
+"productName": "Car",
+"departure": "2022-01-04",
+"pricePerKg": 1.50,
+"hazardous": "false",
+"deliveryDestination": "airport"

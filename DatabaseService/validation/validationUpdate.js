@@ -24,18 +24,17 @@ export const validateFlightUpdate = (request, response) => {
 }
 
 const cargoSchema = Joi.object({
-    cargoId: Joi.string(),
+    cargoId: Joi.string().required(),
     productName: Joi.string(),
     departure: Joi.date(),
-    price: Joi.number().integer(),
-    weight: Joi.string(),
-    size: Joi.number(),
+    pricePerKg: Joi.number(),
     hazardous: Joi.boolean(),
     deliveryDestination: Joi.string()
 });
 
 export const validateCargoUpdate = (request, response) => {
     return Joi.validate(request.body, cargoSchema, (error) => {
+        console.log(request.body)
         if (error) {
             response.status(400).json({message: error.details});
             return false;
@@ -47,12 +46,13 @@ export const validateCargoUpdate = (request, response) => {
 
 
 const rentACarSchema = Joi.object({
-    carName: Joi.string().required(),
-    pricePerDay: Joi.number().integer().required(),
-    yearOfProduction: Joi.date().required(),
-    fuelConsumption: Joi.number().integer().required(),
-    numberOfSeats: Joi.number().integer().required(),
-    numberOfCars: Joi.number().integer().required()
+    carId: Joi.string().required(),
+    carName: Joi.string(),
+    pricePerDay: Joi.number().integer(),
+    yearOfProduction: Joi.date(),
+    fuelConsumption: Joi.number().integer(),
+    numberOfSeats: Joi.number().integer(),
+    numberOfCars: Joi.number().integer()
 });
 
 
@@ -68,14 +68,13 @@ export const validateRentACarUpdate = (request, response) => {
 }
 
 const insuranceSchema = Joi.object({
-    insuranceId: Joi.string(),
-    title: Joi.string(),
-    startTime: Joi.date(),
-    endTime: Joi.date(),
-    price: Joi.number().integer(),
-    typeOfInsurance: Joi.string()
+    insuranceId: Joi.string().required(),
+    nameOfCompany: Joi.string(),
+    destinationCountry: Joi.string(),
+    typeOfInsurance: Joi.string(),
+    premium: Joi.number().integer(),
+    levelOfCover: Joi.number().integer()
 });
-
 
 export const validateInsuranceUpdate = (request, response) => {
     return Joi.validate(request.body, insuranceSchema, (error) => {

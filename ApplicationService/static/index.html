@@ -4,62 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
     <title>Admin Application</title>
-<!--    <link rel="stylesheet" href = "styles.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type = "text/javascript" src="index.js"></script>
 </head>
 
-<body>
-<div class="main_container" id="home">
-    <div class="navbar">
-        <div class="logo"><a href="#">Admin Application</a></div>
-        <div class="navbar_items">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><button id = "user" type="submit">Users</button></li>
-                <li><button id = "flight" type="submit">Flights</button></li>
-                <li><button id = "cargo" type="submit">Cargo</button></li>
-                <li><button id = "rentACar" type="submit">Rent a car</button></li>
-                <li><button id = "insurance" type="submit">Insurance</button></li>
-                <li><button id = "login" type="submit">Log in</button></li>
-                <li><button id = "logout" type="submit">Log out</button></li>
-            </ul>
+<body onload="init()">
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <button type="submit" class="btn btn-info" id="user">Users</button>
+            </div>
         </div>
+        <div class="col">
+            <div class="text-center">
+                <button type="submit" class="btn btn-info" id="flight">Flights</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+                <button type="submit" class="btn btn-info" id="cargo">Cargo</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+                <button type="submit" class="btn btn-info" id="rentACar">Rent a car</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+            <button type="submit" class="btn btn-info" id="insurance">Insurance</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+                <button type="button" id="login" class="btn btn-dark">Login</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+                <button type="button" id="logout" class="btn btn-dark">Logout</button>
+            </div>
+        </div>
+
     </div>
-    <div class = "banner_image"></div>
 </div>
-
 </body>
-
 </html>
-
-
-<!--<body>-->
-<!--<hr>-->
-<!--<div class="row">-->
-<!--    <div class="col">-->
-<!--        <div class="text-center">-->
-<!--            <button type="submit" class="btn btn-outline-success" id="addFlight">Add</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--        <div class="text-center">-->
-<!--            <button type="submit" class="btn btn-outline-primary" id="updateFlight">Update</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--        <div class="text-center">-->
-<!--            <button type="submit" class="btn btn-outline-info" id="getFlight">Find</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--        <div class="text-center">-->
-<!--            <button type="submit" class="btn btn-outline-danger" id="deleteFlight">Remove</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--        <div class="text-center">-->
-<!--            <button type="button" id="logout" class="btn btn-secondary">Log Out</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 

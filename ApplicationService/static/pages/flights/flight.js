@@ -190,18 +190,20 @@ function init() {
     const cookies = document.cookie.split('=');
     const token = cookies[cookies.length - 1];
 
-    fetch('http://localhost:8082/admin/flight', {
+    fetch('http://localhost:8082/admin/flight/getAll', {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
         .then( res => res.json() )
         .then( data => {
-            // const lst = document.getElementById('iceLst');
-            //
-            // data.forEach( el => {
-            //     lst.innerHTML += `<li>ID: ${el.id}, Model: ${el.model}, Size: ${el.size}</li>`;
-            // });
+            const allFlights = document.getElementById('getAllFlights');
+
+            data.forEach( el => {
+                allFlights.innerHTML += `<li>flightId: ${el._id}, flightDestination: ${el.flightDestination}, 
+                    departure: ${el.departure}, arrival: ${el.arrival}, price: ${el.price}, airline: ${el.airline},
+                    numberOfSeats: ${el.numberOfSeats}, typeOfAirplane: ${el.typeOfAirplane} </li>`;
+            });
         });
 
 
@@ -247,7 +249,6 @@ function init() {
         })
             .then( res => res.json() )
             .then( el => {
-
                 document.cookie = `token=${el.token};SameSite=Lax`;
                 window.location.href = 'flight.html';
             });
@@ -258,13 +259,18 @@ function init() {
         e.preventDefault();
 
         const data = {
-            id: document.getElementById('id').value,
-            model: document.getElementById('model').value,
-            size: document.getElementById('size').value
+            flightId: document.getElementById('flightId').value,
+            flightDestination: document.getElementById('flightDestination').value,
+            departure: document.getElementById('departure').value,
+            arrival: document.getElementById('arrival').value,
+            price: document.getElementById('price').value,
+            airline: document.getElementById('airline').value,
+            numberOfSeats: document.getElementById('numberOfSeats').value,
+            typeOfAirplane: document.getElementById('typeOfAirplane').value
         };
 
-        fetch('http://localhost:8000/admin/iceskates/'+id.value, {
-            method: 'PUT',
+        fetch('http://localhost:8082/admin/flight/update', { //+id.value, {
+            method: 'PATCH',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(data)
         })
@@ -272,7 +278,7 @@ function init() {
             .then( res => res.json() )
             .then( el => {
 
-                // document.cookie = `token=${el.token};SameSite=Lax`;
+                document.cookie = `token=${el.token};SameSite=Lax`;
                 window.location.href = 'flight.html';
             });
     });
@@ -282,10 +288,10 @@ function init() {
         e.preventDefault();
 
     const data = {
-        id: document.getElementById('id').value
+        flightId: document.getElementById('flightId').value
     };
 
-    fetch('http://localhost:8000/admin/iceskates/'+id.value, {
+    fetch('http://localhost:8082/admin/flight/getOne', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json'}
 
@@ -295,7 +301,7 @@ function init() {
         .then( el => {
 
             document.cookie = `token=${el.token};SameSite=Lax`;
-            window.location.href = 'users.html';
+            window.location.href = 'user.html';
         });
     });
 

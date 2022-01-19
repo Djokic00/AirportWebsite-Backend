@@ -1,4 +1,3 @@
-// //import Joi from "joi";
 import Joi from "joi"
 
 const flightSchema = Joi.object({
@@ -26,7 +25,7 @@ export const validateFlightInput = (request, response) => {
 const cargoSchema = Joi.object({
     productName: Joi.string().required(),
     departure: Joi.date().required(),
-    price: Joi.number().integer().required(),
+    pricePerKg: Joi.number().required(),
     // weight: Joi.string().required(),
     // size: Joi.number().required(),
     hazardous: Joi.boolean(),

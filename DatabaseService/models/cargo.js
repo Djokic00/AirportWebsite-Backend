@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const cargo = mongoose.Schema({
     productName: { type: String, required: true },
     departure: { type: Date, required: true },
-    price: { type: Number, required: true },
+    pricePerKg: { type: Number, required: true },
     // weight: { type: Number, required: 0 },
     // size: { type: String, required: 0 },
     hazardous: {type: Boolean, required: true},

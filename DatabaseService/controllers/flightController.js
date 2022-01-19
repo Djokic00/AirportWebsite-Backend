@@ -74,7 +74,6 @@ export const updateFlight = async(request, response) => {
         const newFlight = await Flight.findByIdAndUpdate(flight._id, updateContent);
         response.status(200).json(`Successfully edited flight to ${newFlight.flightDestination}`);
     } catch (error) {
-        console.log("Ovde puca")
         response.status(400).json({ message: error.message });
     }
 }
