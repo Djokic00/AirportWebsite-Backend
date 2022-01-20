@@ -1,39 +1,38 @@
 import express from "express";
 import {addFlight, getAllFlights, getFlight, updateFlight, deleteFlight} from "../controllers/flightController.js";
 import {addCargo, getAllCargo, getCargo, updateCargo, deleteCargo} from "../controllers/cargoController.js";
-import {authentication} from "../middleware/authentication.js";
-import {addInsurance,
-    deleteInsurance,
-    getAllInsurance,
-    getInsurance,
-    updateInsurance
+import {authentication, checkIfAdmin, checkIfModerator} from "../middleware/authentication.js";
+import {addInsurance, deleteInsurance, getAllInsurance, getInsurance, updateInsurance
 } from "../controllers/insuranceController.js";
 import {addCar, deleteCar, getAllCars, getCar, updateCar} from "../controllers/rentACarController.js";
+import {deleteUser} from "../controllers/userController.js";
 
 const router = express.Router();
 
-router.post("/flight/add", addFlight);
-router.get("/flight/getOne", getFlight);
-router.get("/flight/getAll", getAllFlights);
-router.patch("/flight/update", updateFlight);
-router.delete("/flight/delete", deleteFlight);
+router.post("/flight/add", authentication, checkIfModerator, addFlight);
+router.get("/flight/getOne", authentication, checkIfModerator, getFlight);
+router.get("/flight/getAll", authentication, checkIfModerator, getAllFlights);
+router.patch("/flight/update", authentication, checkIfModerator, updateFlight);
+router.delete("/flight/delete", authentication, checkIfModerator, deleteFlight);
 
-router.post("/cargo/add", addCargo);
-router.get("/cargo/getOne", getCargo);
-router.get("/cargo/getAll", getAllCargo);
-router.patch("/cargo/update", updateCargo);
-router.delete("/cargo/delete", deleteCargo);
+router.post("/cargo/add", authentication, checkIfModerator, addCargo);
+router.get("/cargo/getOne",authentication, checkIfModerator, getCargo);
+router.get("/cargo/getAll", authentication, checkIfModerator, getAllCargo);
+router.patch("/cargo/update", authentication, checkIfModerator, updateCargo);
+router.delete("/cargo/delete", authentication, checkIfModerator, deleteCargo);
 
-router.post("/insurance/add", addInsurance);
-router.get("/insurance/getOne", getInsurance);
-router.get("/insurance/getAll", getAllInsurance);
-router.patch("/insurance/update", updateInsurance);
-router.delete("/insurance/delete", deleteInsurance);
+router.post("/insurance/add", authentication, checkIfModerator,addInsurance);
+router.get("/insurance/getOne",authentication, checkIfModerator, getInsurance);
+router.get("/insurance/getAll", authentication, checkIfModerator, getAllInsurance);
+router.patch("/insurance/update", authentication, checkIfModerator, updateInsurance);
+router.delete("/insurance/delete", authentication, checkIfModerator, deleteInsurance);
 
-router.post("/rentACar/add", addCar);
-router.get("/rentACar/getOne", getCar);
-router.get("/rentACar/getAll", getAllCars);
-router.patch("/rentACar/update", updateCar);
-router.delete("/rentACar/delete", deleteCar);
+router.post("/rentACar/add", authentication, checkIfModerator, addCar);
+router.get("/rentACar/getOne",authentication, checkIfModerator, getCar);
+router.get("/rentACar/getAll", authentication, checkIfModerator,getAllCars);
+router.patch("/rentACar/update", authentication, checkIfModerator,updateCar);
+router.delete("/rentACar/delete",authentication, checkIfModerator, deleteCar);
+
+router.delete("/user/delete", authentication, checkIfAdmin, deleteUser);
 
 export default router

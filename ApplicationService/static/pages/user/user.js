@@ -1,11 +1,10 @@
 function init() {
 
-    const cookies = document.cookie.split('=');
-    const token = cookies[cookies.length - 1];
+    const token = JSON.parse(localStorage.getItem('token'));
 
     fetch('http://localhost:8080/admin/getAll', {
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `${token}`
         }
     })
         .then( res => res.json() )
@@ -33,22 +32,39 @@ function init() {
 
         fetch('http://localhost:8080/admin/register', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
+            headers: { 'Content-Type': 'application/json', Authorization: `${token}`},
+            body: JSON.stringify(data),
 
         })
 
             .then( res => res.json() )
             .then( el => {
 
-                document.cookie = `token=${el.token};SameSite=Lax`;
+                //document.cookie = `token=${el.token};SameSite=Lax`;
                 window.location.href = 'user.html';
             });
     });
 
+    document.getElementById('deleteUser').addEventListener('click', e => {
+        e.preventDefault();
+
+        const data = {
+            userId: document.getElementById('userId').value
+        };
+
+        fetch('http://localhost:8082/admin/user/delete', { //+ ID.value, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json', Authorization: `${token}`},
+            body: JSON.stringify(data),
+        })
+            .then( res => res.json() )
+            .then( el => {
+                window.location.href = 'user.html';
+            });
+    });
 
     document.getElementById('logout').addEventListener('click', e => {
-        document.cookie = `token=;SameSite=Lax`;
+        //document.cookie = `token=;SameSite=Lax`;
         window.location.href = 'login.html';
     });
 }

@@ -6,20 +6,22 @@ import { validateInput } from "../validation/validation.js";
 
 
 export const register = async(request, response) => {
-    const {fullName, email, username, password, role} = request.body;
+    const {fullName, email, username, password, userType, isBanned} = request.body;
 
-    const validInput = await validateInput(request, response)
-    if (!validInput) {
+    let validInput = await validateInput(request, response)
+    if (validInput === false) {
         return;
     }
-    const hashPassword = await bcrypt.hash(password, 512);
+
+    const hashPassword = await bcrypt.hash(password,12);
 
     const user = new User({
         fullName: fullName,
         email: email,
         username: username,
         password: hashPassword,
-        userType: USER,
+        userType: userType,
+        isBanned: isBanned
     });
     try {
         const newUser = await user.save();
@@ -39,24 +41,32 @@ export const login = async (request, response) => {
         const user = await User.findOne({
             username: username
         });
-        if (!user) {
+        console.log(user.username)
+        console.log(user.userType)
+        console.log(user.password)
+        console.log(password)
+        if (user === null) {
             response.status(400).json({message: `User with ${username} does not exists`})
+            return;
         }
-        if (user.isBanned) {
+        if (user.isBanned === true) {
             response.status(403).json({message: "You are banned"});
+            return;
         }
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
+        const isPasswordCorrect = await bcrypt.compare(password, user.password)
         if (!isPasswordCorrect) {
+            console.log("Ulazi ovde");
             response.status(400).json({message: "Wrong password"});
+            return;
         }
         const token = jwt.sign({
             userId: user._id,
             username: user.username,
             userType: user.userType
         }, process.env.SECRET_KEY)
-        response.status(200).json(`Bearer ${token}`)
+        response.status(200).json(`Bearer ${token}`);
     } catch (error) {
-        response.status(400).json({message: error.details})
+        response.status(400).json({message: error.details});
     }
 }
 

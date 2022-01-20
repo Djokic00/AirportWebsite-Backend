@@ -64,10 +64,20 @@
 
 {
     "flightDestination": "Zürich",
-    "departure": "2020-03-02",
-    "arrival": "2020-03-18",
+    "departure": "2022-03-02",
+    "arrival": "2022-03-18",
     "price": 300,
     "airline": "Lufthansa",
     "numberOfSeats": "160",
     "typeOfAirplane": "Jet"
 }
+
+"username": "Mare",
+"password": "aleksa"
+
+"fullName": "aleksa"
+"email": "a@gmail.com"
+"username": "aleksa",
+"password": "aleksa",
+"userType": "ADMINISTRATOR",
+"isBanned": false
