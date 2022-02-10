@@ -7,11 +7,14 @@ import { validateInput } from "../validation/validation.js";
 
 export const register = async(request, response) => {
     const {fullName, email, username, password, userType, isBanned} = request.body;
+    console.log(request.body.username);
+    console.log(request.body.userType);
+    console.log(request.body.isBanned);
 
     let validInput = await validateInput(request, response)
-    if (validInput === false) {
-        return;
-    }
+    // if (validInput === false) {
+    //     return;
+    // }
 
     const hashPassword = await bcrypt.hash(password,12);
 
@@ -29,6 +32,8 @@ export const register = async(request, response) => {
             userId: newUser._id,
             userType: newUser.userType
         }, process.env.SECRET_KEY);
+        console.log("radi lepo")
+        console.log(token);
         response.status(200).json(`Bearer ${token}`);
     } catch(error) {
         response.status(400).json({message: error.message});
@@ -44,7 +49,6 @@ export const login = async (request, response) => {
         console.log(user.username)
         console.log(user.userType)
         console.log(user.password)
-        console.log(password)
         if (user === null) {
             response.status(400).json({message: `User with ${username} does not exists`})
             return;

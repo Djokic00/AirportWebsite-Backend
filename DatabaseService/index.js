@@ -4,8 +4,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import routes from "./routes/routes.js";
 
-// mozemo da koristimo import zato sto smo ubacil "type": "module" u package.json
-
 dotenv.config();
 const app = express();
 
@@ -15,8 +13,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
 
 app.use("/admin", routes);
 
-const PORT = process.env.PORT || 8082; // na kom portu slusamo
-// konektovanje na bazu - ima na internetu kako se radi i ovo DATABASE_CONNECTION je link ka nasoj mongo bazi
+const PORT = process.env.PORT || 8082;
 mongoose
     .connect(process.env.DATABASE_CONNECTION, {
         useNewUrlParser: true,

@@ -11,10 +11,9 @@
 // });
 //
 //
-// export const validateFlightInput = (request, response) => {
-//     return Joi.validate(request.body, flightSchema, (error) => {
+// export const validateFlightInput = (data) => {
+//     return Joi.validate(data, flightSchema, (error) => {
 //         if (error) {
-//             response.status(400).json({message: error.details});
 //             return false;
 //         } else {
 //             return true;

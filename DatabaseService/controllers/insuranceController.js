@@ -1,4 +1,4 @@
-import Insurance from "../models/insurance.js";
+import Insurance from "../models/Insurance.js";
 import {validateInsuranceInput} from "../validation/validation.js";
 import {validateFlightUpdate, validateInsuranceUpdate} from "../validation/validationUpdate.js";
 

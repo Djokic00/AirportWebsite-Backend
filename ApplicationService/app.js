@@ -11,7 +11,13 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.use("/", routes);
+app.use("/admin", routes);
+
+// app.use(express.static(path.join(__dirname, '../../airport-frontend/dist')));
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, '../airport-frontend/dist/index.html' ));
+// })
+
 
 app.use(express.static(path.join(__dirname, "static")));
 

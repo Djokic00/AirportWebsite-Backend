@@ -11,25 +11,25 @@ const router = express.Router();
 
 router.post("/flight/add", authentication, checkIfModerator, addFlight);
 router.get("/flight/getOne", authentication, checkIfModerator, getFlight);
-router.get("/flight/getAll", authentication, checkIfModerator, getAllFlights);
+router.get("/flight/getAll", getAllFlights);
 router.patch("/flight/update", authentication, checkIfModerator, updateFlight);
 router.delete("/flight/delete", authentication, checkIfModerator, deleteFlight);
 
 router.post("/cargo/add", authentication, checkIfModerator, addCargo);
 router.get("/cargo/getOne",authentication, checkIfModerator, getCargo);
-router.get("/cargo/getAll", authentication, checkIfModerator, getAllCargo);
+router.get("/cargo/getAll", getAllCargo);
 router.patch("/cargo/update", authentication, checkIfModerator, updateCargo);
 router.delete("/cargo/delete", authentication, checkIfModerator, deleteCargo);
 
 router.post("/insurance/add", authentication, checkIfModerator,addInsurance);
 router.get("/insurance/getOne",authentication, checkIfModerator, getInsurance);
-router.get("/insurance/getAll", authentication, checkIfModerator, getAllInsurance);
+router.get("/insurance/getAll", getAllInsurance);
 router.patch("/insurance/update", authentication, checkIfModerator, updateInsurance);
 router.delete("/insurance/delete", authentication, checkIfModerator, deleteInsurance);
 
 router.post("/rentACar/add", authentication, checkIfModerator, addCar);
 router.get("/rentACar/getOne",authentication, checkIfModerator, getCar);
-router.get("/rentACar/getAll", authentication, checkIfModerator,getAllCars);
+router.get("/rentACar/getAll", getAllCars);
 router.patch("/rentACar/update", authentication, checkIfModerator,updateCar);
 router.delete("/rentACar/delete",authentication, checkIfModerator, deleteCar);
 

@@ -32,6 +32,8 @@ function init() {
             typeOfAirplane: document.getElementById('typeOfAirplane').value
         };
 
+        let valid = validateFlightInput(data);
+        if (valid === false) return;
 
         fetch('http://localhost:8082/admin/flight/add', {
             method: 'POST',

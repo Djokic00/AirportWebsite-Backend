@@ -8,8 +8,6 @@ const insurance = mongoose.Schema({
     levelOfCover: {type: Number, required: true}
 });
 
-// jos 1 stvar za osiguranje, naziv osiguranja, cena po danu, tip osiguranja, destinacija
-
 const Insurance = mongoose.model("Insurance", insurance);
 
 export default Insurance;

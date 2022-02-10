@@ -1,5 +1,5 @@
 import Flight from "../models/flight.js";
-import {validateFlightInput} from "../validation/validation.js";
+//import {validateFlightInput} from "../validation/validation.js";
 import {request, response} from "express";
 import {validateFlightUpdate} from "../validation/validationUpdate.js";
 
